@@ -8,7 +8,15 @@ import org.junit.Test;
 
 import co.edu.udea.ingweb.exception.MyException;
 
-
+/**
+ * 
+ * Clase para realizar las pruebas en el DataSource
+ * 
+ * @author jpoh97
+ * @since 1.8
+ * @version 1.0
+ *
+ */
 public class DataSourceTest {
 	
 	/**
