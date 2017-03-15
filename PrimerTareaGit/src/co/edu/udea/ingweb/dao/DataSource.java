@@ -19,17 +19,38 @@ import co.edu.udea.ingweb.exception.MyException;
 
 public class DataSource {
 
+	private static DataSource mDataSource; //unica instancia de esta clase
+	private static Connection conn;//variable de conexión
+	
+	public DataSource() {
+		conn = null;
+	}
+	
+
+	/**
+	 * Metodo que retorna la única instancia que se puede 
+	 * declarar de esta clase
+	 * @return objeto singleton que representa la clase 
+	 */
+    public static DataSource getInstance(){
+	    if(mDataSource==null){
+	    	mDataSource = new DataSource();
+	    }
+    	return mDataSource;
+    }
+	
 	/**
 	 * Método para establecer la conexión con la base de datos
 	 * 
 	 * @return variable de conexión
 	 * @throws MyException
-	 */
-	public static Connection getConnection() throws MyException {
-		Connection conn = null; //variable de conexión
+	 */	
+	public Connection getConnection() throws MyException {		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/clase", "root", "jpoh97");			
+			if(conn == null || conn.isClosed()) {
+				Class.forName("com.mysql.jdbc.Driver");
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/clase", "root", "jpoh97");	
+			}			
 		} catch (ClassNotFoundException e) { //Capturo todas las posibles excepciones
 			throw new MyException("Driver no encontrado", e);
 		} catch (SQLException e) {

@@ -19,4 +19,6 @@ public interface CiudadFacade {
 	
 	public List<CiudadPOJO> obtener() throws MyException;
 	
+	public CiudadPOJO obtener(Long codigo) throws MyException;
+	
 }
