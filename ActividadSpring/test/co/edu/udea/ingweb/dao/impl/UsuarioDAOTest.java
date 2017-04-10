@@ -1,5 +1,18 @@
 package co.edu.udea.ingweb.dao.impl;
 
+
+/**
+ *Clase creada para realizar las pruebas de
+ *los metodos del usuario 
+ *
+ *Se encuentra en la carpeta Test
+ *
+ * @author Juan Pablo Ospina Herrera
+ * @since 1.8
+ * @version 1.0 
+ * 
+ */
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -29,6 +42,10 @@ public class UsuarioDAOTest {
 	@Autowired
 	private UsuarioFacade mUsuarioDAO;
 	
+	/**
+	 * Caso de prueba para el metodo obtener que retorna el 
+	 * listado con todos los usuarios
+	 */
 	@Test
 	public void testObtenerTodos() {
 		List<UsuarioPOJO> mList = null;
@@ -41,6 +58,10 @@ public class UsuarioDAOTest {
 		}
 	}
 	
+	/**
+	 * Caso de prueba para el metodo obtener que retorna un
+	 * cliente especifico a partir del login	
+	 */
 	@Test
 	public void testObtener() {
 		UsuarioPOJO mUsuario = null;
@@ -55,6 +76,10 @@ public class UsuarioDAOTest {
 		}
 	}
 	
+	/**
+	 * Caso de prueba para el metodo que guarda un usuario 
+	 * en la base de datos
+	 */	
 	@Test
 	public void testGuardar() {
 		UsuarioPOJO mUsuario = null;
@@ -62,15 +87,15 @@ public class UsuarioDAOTest {
 		try {
 			mUsuario  = new UsuarioPOJO();
 			mRol  = new RolPOJO();
-			mUsuario.setNombre("nombre");
-			mUsuario.setLogin("logintest");
-			mUsuario.setContrasena("contraseña");
-			mUsuario.setApellido("apellido");
+			mUsuario.setNombre("miUsuario");
+			mUsuario.setLogin("miLogin");
+			mUsuario.setContrasena("micontrasena");
+			mUsuario.setApellido("miapellido");
 			mRol .setCodigo("ADM");
 			mUsuario.setRol(mRol);
 
 			mUsuarioDAO.guardar(mUsuario);
-			assertTrue(null != mUsuarioDAO.obtener("logintest"));
+			assertTrue(null != mUsuarioDAO.obtener("miLogin"));
 		} catch (MyException e) {
 			e.printStackTrace();
 			fail(e.getMessage());

@@ -1,5 +1,18 @@
 package co.edu.udea.ingweb.dao.impl;
 
+
+/**
+ *Clase creada para realizar las pruebas de
+ *los metodos del cliente 
+ *
+ *Se encuentra en la carpeta Test
+ *
+ * @author Juan Pablo Ospina Herrera
+ * @since 1.8
+ * @version 1.0 
+ * 
+ */
+
 import static org.junit.Assert.*;
 
 import java.util.Date;
@@ -27,6 +40,10 @@ public class ClienteDAOTest {
 	@Autowired
 	private ClienteFacade mClienteDAO;
 	
+	/**
+	 * Caso de prueba para el metodo obtener que retorna el 
+	 * listado con todos los clientes
+	 */
 	@Test
 	public void testObtenerTodos() {
 		List<ClientePOJO> mList = null;
@@ -39,6 +56,10 @@ public class ClienteDAOTest {
 		}
 	}
 	
+	/**
+	 * Caso de prueba para el metodo obtener que retorna un
+	 * cliente especifico a partir de la cedula	
+	 */
 	@Test
 	public void testObtener() {
 		ClientePOJO mCliente = null;
@@ -52,13 +73,17 @@ public class ClienteDAOTest {
 	}
 
 
+	/**
+	 * Caso de prueba para el metodo que guarda un cliente 
+	 * en la base de datos
+	 */	
 	@Test
 	public void testGuardar() {
 		ClientePOJO mCliente = null;
 		UsuarioPOJO mUsuario = null;
 		try {
 			mCliente = new ClientePOJO();
-			mCliente.setCedula("2020");
+			mCliente.setCedula("202010");
 			mCliente.setNombres("neyder");
 			mCliente.setApellidos("yesid morantes");
 			mCliente.setEmail("elneyder@gmail.com");
@@ -71,7 +96,7 @@ public class ClienteDAOTest {
 						
 			mClienteDAO.guardar(mCliente);
 			
-			assertTrue(mClienteDAO.obtener("123498") != null);
+			assertTrue(mClienteDAO.obtener("202010") != null);
 		} catch (MyException e) {
 			e.printStackTrace();
 			fail(e.getMessage());

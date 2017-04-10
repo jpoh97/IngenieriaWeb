@@ -6,7 +6,7 @@ package co.edu.udea.ingweb.dto;
  *
  *Se encuentra en el paquete DTO
  *
- * @author jpoh97
+ * @author Juan Pablo Ospina Herrera
  * @since 1.8
  * @version 1.0 
  * 

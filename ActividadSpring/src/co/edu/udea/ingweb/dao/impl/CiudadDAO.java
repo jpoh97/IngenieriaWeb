@@ -1,5 +1,17 @@
 package co.edu.udea.ingweb.dao.impl;
 
+/**
+ *Clase creada para implementar todos los metodos
+ *de la ciudad en la base de Datos
+ *
+ *Se encuentra en el paquete DAO.Impl
+ *
+ * @author Juan Pablo Ospina Herrera
+ * @since 1.8
+ * @version 1.0 
+ * 
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +44,9 @@ public class CiudadDAO implements CiudadFacade {
 	}
 
 	/**
-	 * Implemento el método para obtener un listado con todas las ciudades
+	 * Implementación del metodo para obtener la lista de ciudades en la base de datos	
+	 * @return listado con ciudades
+	 * @throws MyException
 	 */
 	@Override
 	public List<CiudadPOJO> obtener() throws MyException {
@@ -50,7 +64,10 @@ public class CiudadDAO implements CiudadFacade {
 	}
 
 	/**
-	 * Implemento el método para obtener una ciudad
+	 * Implementación del metodo para obtener una ciudad de la base de datos
+	 * a partir del código de esta
+	 * @return objeto que represanta la ciudad solicitada
+	 * @throws MyException
 	 */
 	@Override
 	public CiudadPOJO obtener(Long codigo) throws MyException {
@@ -69,9 +86,11 @@ public class CiudadDAO implements CiudadFacade {
 		} 
 		return mCiudad;
 	}
-
+	
 	/**
-	 * 
+	 * Implementacióń del metodo que permite guardar una ciudad nueva en la base de datos
+	 * @param mCiudad (ciudad a guardar)
+	 * @throws MyException
 	 */
 	@Override
 	public void guardar(CiudadPOJO mCiudad) throws MyException {

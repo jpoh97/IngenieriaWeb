@@ -1,5 +1,17 @@
 package co.edu.udea.ingweb.dto;
 
+/**
+ *Clase creada para realizar la transferencia 
+ *de objetos a la base de datos
+ *
+ *Se encuentra en el paquete DTO
+ *
+ * @author Juan Pablo Ospina Herrera
+ * @since 1.8
+ * @version 1.0 
+ * 
+ */
+
 public class UsuarioPOJO {
 	
 	private String login;

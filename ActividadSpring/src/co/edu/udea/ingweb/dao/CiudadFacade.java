@@ -1,20 +1,21 @@
 package co.edu.udea.ingweb.dao;
 
-import java.util.List;
-
-import co.edu.udea.ingweb.exception.MyException;
-import co.edu.udea.ingweb.dto.CiudadPOJO;
-
 /**
  * 
  *Interface que permite definir los métodos de la 
  *clase ciudad
  *
- * @author jpoh97
+ * @author Juan Pablo Ospina Herrera
  * @since 1.8
  * @version 1.0
  *
  */
+
+import java.util.List;
+
+import co.edu.udea.ingweb.exception.MyException;
+import co.edu.udea.ingweb.dto.CiudadPOJO;
+
 public interface CiudadFacade {
 	
 	/**
@@ -33,8 +34,8 @@ public interface CiudadFacade {
 	public CiudadPOJO obtener(Long mCodigo) throws MyException;
 	
 	/**
-	 * 
-	 * @param mCiudad
+	 * Firma del metodo que permite guardar una ciudad nueva en la base de datos
+	 * @param mCiudad (ciudad a guardar)
 	 * @throws MyException
 	 */
 	public void guardar(CiudadPOJO mCiudad) throws MyException;
