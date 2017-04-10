@@ -24,11 +24,11 @@
 		<property name="fechaCreacion" type="java.util.Date">
 			<column name="FECHACREACION" not-null="true" />
 		</property>
-		<many-to-one name="usuarioModifica" class="co.edu.udea.ingweb.dto.UsuarioPOJO"
+		<many-to-one name="usuarioMod" class="co.edu.udea.ingweb.dto.UsuarioPOJO"
 			lazy="proxy" fetch="join">
 			<column name="USUARIOMODIFICA" length="15" not-null="false" />
 		</many-to-one>
-		<property name="fechaModificacion" type="java.util.Date">
+		<property name="fechaMod" type="java.util.Date">
 			<column name="FECHAMODIFICACION" not-null="false" />
 		</property>
 		<property name="eliminado" type="java.lang.Boolean">

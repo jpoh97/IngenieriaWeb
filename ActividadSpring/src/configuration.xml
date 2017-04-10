@@ -23,8 +23,8 @@
 				<value>co/edu/udea/ingweb/dto/CiudadPOJO.hbm.xml</value>
 				<value>co/edu/udea/ingweb/dto/RolPOJO.hbm.xml</value>
 				<value>co/edu/udea/ingweb/dto/UsuarioPOJO.hbm.xml</value>
-<!-- 				<value>co/edu/udea/ingweb/dto/ClientePOJO.hbm.xml</value> -->
-<!-- 				<value>co/edu/udea/ingweb/dto/DireccionPOJO.hbm.xml</value> -->
+				<value>co/edu/udea/ingweb/dto/ClientePOJO.hbm.xml</value>
+				<value>co/edu/udea/ingweb/dto/DireccionPOJO.hbm.xml</value>
 
 			</list>
 		</property>
@@ -43,6 +43,14 @@
 	</bean>
 	
 	<bean id="CiudadDAO" class="co.edu.udea.ingweb.dao.impl.CiudadDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="UsuarioDAO" class="co.edu.udea.ingweb.dao.impl.UsuarioDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="ClienteDAO" class="co.edu.udea.ingweb.dao.impl.ClienteDAO">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 
