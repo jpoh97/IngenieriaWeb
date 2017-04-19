@@ -25,7 +25,6 @@
 				<value>co/edu/udea/ingweb/dto/UsuarioPOJO.hbm.xml</value>
 				<value>co/edu/udea/ingweb/dto/ClientePOJO.hbm.xml</value>
 				<value>co/edu/udea/ingweb/dto/DireccionPOJO.hbm.xml</value>
-
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -54,4 +53,12 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 
+	<bean id="ClienteBL" class="co.edu.udea.ingweb.bl.ClienteBL">
+		<property name="clienteDao" ref="ClienteDAO"></property>
+		<property name="usuarioDao" ref="UsuarioDAO"></property>
+	</bean>
+	
+	<bean id="UsuarioBL" class="co.edu.udea.ingweb.bl.UsuarioBL">
+		<property name="usuarioDao" ref="UsuarioDAO"></property>
+	</bean>
 </beans>

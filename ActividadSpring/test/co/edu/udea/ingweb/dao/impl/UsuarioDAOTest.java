@@ -91,7 +91,7 @@ public class UsuarioDAOTest {
 			mUsuario.setLogin("miLogin");
 			mUsuario.setContrasena("micontrasena");
 			mUsuario.setApellido("miapellido");
-			mRol .setCodigo("ADM");
+			mRol.setCodigo("ADM");
 			mUsuario.setRol(mRol);
 
 			mUsuarioDAO.guardar(mUsuario);

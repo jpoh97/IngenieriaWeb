@@ -27,5 +27,6 @@
 	<classpathentry kind="lib" path="/home/jpoh97/Descargas/Spring4/spring-web-4.1.6.RELEASE.jar"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/home/jpoh97/Descargas/javax.mail-1.5.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
