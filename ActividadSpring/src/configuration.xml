@@ -61,4 +61,8 @@
 	<bean id="UsuarioBL" class="co.edu.udea.ingweb.bl.UsuarioBL">
 		<property name="usuarioDao" ref="UsuarioDAO"></property>
 	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+		
+	<context:component-scan base-package="co.edu.udea.iw.ws"></context:component-scan>
 </beans>

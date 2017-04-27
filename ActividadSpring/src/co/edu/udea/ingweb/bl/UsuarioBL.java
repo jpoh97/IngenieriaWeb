@@ -2,6 +2,7 @@ package co.edu.udea.ingweb.bl;
 
 import java.util.List;
 
+import co.edu.udea.ingweb.dao.UsuarioFacade;
 import co.edu.udea.ingweb.dao.impl.UsuarioDAO;
 import co.edu.udea.ingweb.dto.RolPOJO;
 import co.edu.udea.ingweb.dto.UsuarioPOJO;
@@ -20,13 +21,13 @@ import co.edu.udea.ingweb.exception.MyException;
  */
 public class UsuarioBL {
 	
-	private UsuarioDAO usuarioDao;
+	private UsuarioFacade usuarioDao;
 	
-	public UsuarioDAO getUsuarioDao() {
+	public UsuarioFacade getUsuarioDao() {
 		return usuarioDao;
 	}
 
-	public void setUsuarioDao(UsuarioDAO usuarioDao) {
+	public void setUsuarioDao(UsuarioFacade usuarioDao) {
 		this.usuarioDao = usuarioDao;
 	}
 	
@@ -37,7 +38,7 @@ public class UsuarioBL {
 	 * @return Verdadero si cumple todas las restrincciones
 	 * @throws MyException En caso de no cumplir las condiciones o haber un error
 	 */
-	public Boolean validateLogin(String login, String password) throws MyException {
+	public void validateLogin(String login, String password) throws MyException {
 
 		isValidField(login, "login");
 		isValidField(password, "contraseña");
@@ -52,7 +53,6 @@ public class UsuarioBL {
 			throw new MyException("Contraseña incorrecta");
 		}
 		
-		return true;
 	}
 	
 	/**

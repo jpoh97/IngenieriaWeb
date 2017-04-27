@@ -3,12 +3,16 @@ package co.edu.udea.ingweb.bl;
 import java.util.Date;
 import java.util.List;
 
+import co.edu.udea.ingweb.dao.ClienteFacade;
+import co.edu.udea.ingweb.dao.UsuarioFacade;
 import co.edu.udea.ingweb.dao.impl.ClienteDAO;
 import co.edu.udea.ingweb.dao.impl.UsuarioDAO;
 import co.edu.udea.ingweb.dto.ClientePOJO;
 import co.edu.udea.ingweb.exception.MyException;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
+
+import org.springframework.transaction.annotation.Transactional;
 
 
 /**
@@ -22,24 +26,26 @@ import javax.mail.internet.InternetAddress;
  * @version 1.0 
  * 
  */
+
+@Transactional
 public class ClienteBL {
 	
-	private ClienteDAO clienteDao;	
-	private UsuarioDAO usuarioDao;
+	private ClienteFacade clienteDao;	
+	private UsuarioFacade usuarioDao;
 	
-	public UsuarioDAO getUsuarioDao() {
+	public UsuarioFacade getUsuarioDao() {
 		return usuarioDao;
 	}
 
-	public void setUsuarioDao(UsuarioDAO usuarioDao) {
-		this.usuarioDao = usuarioDao;
+	public void setUsuarioDao(UsuarioFacade usuarioDao) {
+		this.usuarioDao = usuarioDao; 
 	}
 
-	public ClienteDAO getClienteDao() {
+	public ClienteFacade getClienteDao() {
 		return clienteDao;
 	}
 
-	public void setClienteDao(ClienteDAO mClienteDao) {
+	public void setClienteDao(ClienteFacade mClienteDao) {
 		this.clienteDao = mClienteDao;
 	}
 

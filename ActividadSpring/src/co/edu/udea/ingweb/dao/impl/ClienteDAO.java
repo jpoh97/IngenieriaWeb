@@ -44,7 +44,7 @@ public class ClienteDAO implements ClienteFacade {
 	 */
 	@Override
 	public List<ClientePOJO> obtener() throws MyException {
-		List<ClientePOJO> mList = new ArrayList<>();
+		List<ClientePOJO> mList = new ArrayList<ClientePOJO>();
 		Session mSession = null;
 		try {
 			mSession = mSessionFactory.getCurrentSession();

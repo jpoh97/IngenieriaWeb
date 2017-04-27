@@ -50,7 +50,7 @@ public class CiudadDAO implements CiudadFacade {
 	 */
 	@Override
 	public List<CiudadPOJO> obtener() throws MyException {
-		List<CiudadPOJO> mList = new ArrayList<>(); //listado con todas las ciudades
+		List<CiudadPOJO> mList = new ArrayList<CiudadPOJO>(); //listado con todas las ciudades
 		Session mSession = null;
 		try {
 			mSession = mSessionFactory.getCurrentSession();

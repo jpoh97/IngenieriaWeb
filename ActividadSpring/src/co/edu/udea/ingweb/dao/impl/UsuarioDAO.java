@@ -12,6 +12,7 @@ package co.edu.udea.ingweb.dao.impl;
  * 
  */
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,11 +20,13 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.ingweb.dao.UsuarioFacade;
 import co.edu.udea.ingweb.dto.UsuarioPOJO;
 import co.edu.udea.ingweb.exception.MyException;
 
+@Transactional
 public class UsuarioDAO implements UsuarioFacade {
 	
 	private SessionFactory mSessionFactory;
@@ -44,7 +47,7 @@ public class UsuarioDAO implements UsuarioFacade {
 	 */
 	@Override
 	public List<UsuarioPOJO> obtener() throws MyException {
-		List<UsuarioPOJO> mList = new ArrayList<>(); 
+		List<UsuarioPOJO> mList = new ArrayList<UsuarioPOJO>(); 
 		Session mSession = null;
 		try {
 			mSession = mSessionFactory.getCurrentSession();
