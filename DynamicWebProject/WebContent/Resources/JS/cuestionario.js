@@ -5,15 +5,22 @@
  * @version 1.0
  */
 
+/**
+ * modulo que utiliza la vista principal
+ */
 var cuestionario = angular.module('modCuestionario', []);
 
+/**
+ * controlador que utiliza el div principal
+ */
 cuestionario.controller('contCuestionario', function($scope) {
 	
 	$scope.cont = 0;
 	$scope.userState = '';
 	
 	/**
-	 * Todas las respuestas son la opcion A
+	 * Listado con las 3 preguntas
+	 * Todas las respuestas correctas son la opcion A
 	 */
 	$scope.questions = [ {
 		id : 1,
@@ -65,6 +72,11 @@ cuestionario.controller('contCuestionario', function($scope) {
 		} ]
 	} ];
 	
+	/**
+	 * Funcion que calcula las respuestas correctas e incorrectas
+	 * del usuario
+	 * @returns
+	 */
 	function calculate() {
 		for (var i = $scope.questions.length-1; i >= 0; i--) {
 			if($scope.questions[i].trueAnswer == $scope.questions[i].userAnswer) {
@@ -83,6 +95,11 @@ cuestionario.controller('contCuestionario', function($scope) {
 		}
 	};
 	
+	/**
+	 * Funcion que se encarga del estado para mostrar una imagen
+	 * dependiendo del caso
+	 * @returns
+	 */
 	function userState() {
 		var total = $scope.cont/$scope.questions.length;
 		
