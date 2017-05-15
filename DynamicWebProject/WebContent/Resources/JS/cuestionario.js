@@ -55,18 +55,22 @@ cuestionario.controller('contCuestionario', function($scope) {
 		} ]
 	} ];
 	
-	$scope.validar = function(question) {
-		if(question.trueAnswer == question.userAnswer) {
-			$scope.cont++;
-			question.state = 'ok';
-		} else {
-			if(question.state == 'ok' && $scope.cont > 0) {
-				$scope.cont--;	
+	function calculate() {
+		for (var i = $scope.questions.length-1; i >= 0; i--) {
+			if($scope.questions[i].trueAnswer == $scope.questions[i].userAnswer) {
+				if($scope.questions[i].state != 'ok') {
+					$scope.cont++;	
+				}
+				$scope.questions[i].state = 'ok';
+			} else {
+				if($scope.questions[i].state == 'ok' && $scope.cont > 0) {
+					$scope.cont--;	
+				}
+				$scope.questions[i].state = 'err';	
+				
 			}
-			question.state = 'err';	
-			
+			userState();	
 		}
-		userState();
 	};
 	
 	function userState() {
@@ -79,5 +83,15 @@ cuestionario.controller('contCuestionario', function($scope) {
 		} else {
 			$scope.userState = 'poor';
 		}
+	}
+	
+	$scope.verify = function() {
+		for (var i = $scope.questions.length-1; i >= 0; i--) {
+			if($scope.questions[i].userAnswer == null) {
+				alert('Faltan preguntas por responder');
+				return;
+			}
+		}
+		calculate();
 	}
 })

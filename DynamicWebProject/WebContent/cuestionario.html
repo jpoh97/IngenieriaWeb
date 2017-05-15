@@ -16,14 +16,15 @@
 					<input type="radio" value="{{question.id}}" 
 						name="pregunta{{myAnswer.id}}"
 						id="pregunta{{myAnswer.id}}{{question.id}}"
-						ng-model="myAnswer.userAnswer"
-						ng-change="validar(myAnswer)">
+						ng-model="myAnswer.userAnswer">
 					<label for="pregunta{{myAnswer.id}}{{question.id}}">
 					{{question.text}}</label>
 				</div>
 			</div>
+			
+			<input type="submit" value="VALIDAR" ng-click="verify()">
 		</div>
-		
+				
 		<div class="estadoUsuario {{userState}}">
 			<span>Has acertado {{cont}} de {{questions.length}}</span>
 		</div>		
