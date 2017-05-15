@@ -1,3 +1,10 @@
+/**
+ * Codigo JS para la vista cuestionario
+ * @author Juan Pablo Ospina Herrera
+ * @since 1.8
+ * @version 1.0
+ */
+
 var cuestionario = angular.module('modCuestionario', []);
 
 cuestionario.controller('contCuestionario', function($scope) {
@@ -5,6 +12,9 @@ cuestionario.controller('contCuestionario', function($scope) {
 	$scope.cont = 0;
 	$scope.userState = '';
 	
+	/**
+	 * Todas las respuestas son la opcion A
+	 */
 	$scope.questions = [ {
 		id : 1,
 		text : "pregunta 1",
@@ -85,6 +95,9 @@ cuestionario.controller('contCuestionario', function($scope) {
 		}
 	}
 	
+	/**
+	 * Funcion que llama el boton validar
+	 */
 	$scope.verify = function() {
 		for (var i = $scope.questions.length-1; i >= 0; i--) {
 			if($scope.questions[i].userAnswer == null) {
